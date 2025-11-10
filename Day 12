@@ -1,0 +1,28 @@
+class Student : Person{
+    private int[] testScores;  
+    
+    /*
+    *   Class Constructor
+    */
+    public Student(string firstName, string lastName, int id, int[] scores) 
+        : base(firstName, lastName, id)
+    {
+        this.testScores = scores;
+    }
+    
+    /*
+    *   Method Name: Calculate
+    *   Return: A character denoting the grade.
+    */
+    public char Calculate() {
+        int sum = testScores.Sum();
+        int avg = sum / testScores.Length;
+        
+        if (avg >= 90 && avg <= 100) return 'O'; // Outstanding
+        else if (avg >= 80) return 'E';          // Exceeds Expectations
+        else if (avg >= 70) return 'A';          // Acceptable
+        else if (avg >= 55) return 'P';          // Poor
+        else if (avg >= 40) return 'D';          // Dreadful
+        else return 'T';                         // Troll
+    }
+}
