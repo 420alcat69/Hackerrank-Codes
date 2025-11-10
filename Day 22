@@ -1,0 +1,14 @@
+static int getHeight(Node root){
+        // Base case: empty tree has height -1
+        if (root == null)
+        {
+            return -1;
+        }
+
+        // Recursively compute height of left and right subtrees
+        int leftHeight = getHeight(root.left);
+        int rightHeight = getHeight(root.right);
+
+        // Height of tree is max of left/right + 1
+        return Math.Max(leftHeight, rightHeight) + 1;
+    }
