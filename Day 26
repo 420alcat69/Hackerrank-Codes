@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+
+class Solution {
+    static void Main(String[] args) {
+        // Read actual return date
+        string[] actualInput = Console.ReadLine().Split(' ');
+        int d1 = int.Parse(actualInput[0]);
+        int m1 = int.Parse(actualInput[1]);
+        int y1 = int.Parse(actualInput[2]);
+
+        // Read expected return date
+        string[] expectedInput = Console.ReadLine().Split(' ');
+        int d2 = int.Parse(expectedInput[0]);
+        int m2 = int.Parse(expectedInput[1]);
+        int y2 = int.Parse(expectedInput[2]);
+
+        int fine = 0;
+
+        if (y1 > y2) {
+            // Returned in a later year
+            fine = 10000;
+        } else if (y1 == y2) {
+            if (m1 > m2) {
+                // Returned in a later month but same year
+                fine = 500 * (m1 - m2);
+            } else if (m1 == m2 && d1 > d2) {
+                // Returned in a later day but same month and year
+                fine = 15 * (d1 - d2);
+            }
+        }
+
+        Console.WriteLine(fine);
+    }
+}
