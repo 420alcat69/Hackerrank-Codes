@@ -1,0 +1,23 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class Solution
+{
+    public static void Main(string[] args)
+    {
+        int n = Convert.ToInt32(Console.ReadLine().Trim());
+
+        List<int> arr = Console.ReadLine()
+            .Trim()
+            .Split(' ')
+            .Select(arrTemp => Convert.ToInt32(arrTemp))
+            .ToList();
+
+        // Reverse the list
+        arr.Reverse();
+
+        // Print space-separated values
+        Console.WriteLine(string.Join(" ", arr));
+    }
+}
