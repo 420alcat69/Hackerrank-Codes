@@ -1,0 +1,26 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+
+class Solution {
+    static void Main(String[] args) {
+        int T = int.Parse(Console.ReadLine()); // number of test cases
+
+        for (int t = 0; t < T; t++) {
+            string S = Console.ReadLine();
+
+            string evenChars = "";
+            string oddChars = "";
+
+            for (int i = 0; i < S.Length; i++) {
+                if (i % 2 == 0) {
+                    evenChars += S[i];
+                } else {
+                    oddChars += S[i];
+                }
+            }
+
+            Console.WriteLine(evenChars + " " + oddChars);
+        }
+    }
+}
