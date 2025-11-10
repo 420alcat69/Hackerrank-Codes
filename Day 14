@@ -1,0 +1,12 @@
+// Constructor
+    public Difference(int[] elements) {
+        this.elements = elements;
+    }
+
+    // Method to compute maximum absolute difference
+    public void computeDifference() {
+        int minVal = elements.Min();
+        int maxVal = elements.Max();
+        maximumDifference = Math.Abs(maxVal - minVal);
+         }
+          
